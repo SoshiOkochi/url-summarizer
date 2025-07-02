@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build && npm run export"
+  publish = "out"
+
+[build.environment]
+  GEMINI_API_KEY = "AIzaSyBtkrCU4uJ9eXDuSEXqhKiEsUqXDuZBXoA"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

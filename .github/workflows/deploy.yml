@@ -1,4 +1,4 @@
-name: Deploy to Vercel
+name: Deploy to Netlify
 
 on:
   push:
@@ -16,11 +16,11 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: npm run export
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v20
+      - name: Deploy to Netlify
+        uses: netlify/actions/deploy@main
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org: SoshiOkochi
-          vercel-project: url-summarizer
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-args: --prod
+          access_token: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+          site_id: ${{ secrets.NETLIFY_SITE_ID }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_ref: ${{ github.ref }}
+          github_sha: ${{ github.sha }}
