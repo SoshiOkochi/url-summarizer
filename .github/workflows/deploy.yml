@@ -15,8 +15,6 @@ jobs:
           node-version: '18'
       - run: npm install
       - run: npm run build
-      - uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: out
-          clean: true
+      - run: npm run deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
