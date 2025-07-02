@@ -15,6 +15,12 @@ jobs:
           node-version: '18'
       - run: npm install
       - run: npm run build
-      - run: npm run deploy
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run export
+      - run: |
+          cd out
+          git init
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Deploy to GitHub Pages"
+          git push -f https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages
