@@ -9,8 +9,7 @@
     "lint": "next lint",
     "deploy": "gh-pages -d out"
   },
-  "homepage": "https://あなたのGitHubユーザー名.github.io/url-summarizer",
-  "dependencies": {
+  "homepage": "https://your-username.github.io/url-summarizer",
   "dependencies": {
     "next": "14.0.4",
     "react": "^18.2.0",
@@ -39,6 +38,7 @@
     "@testing-library/jest-dom": "^6.2.0"
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "@types/node": "^20.10.6",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
